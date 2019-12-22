@@ -14,4 +14,3 @@ after_success:
   - docker build -t sany/multi-nginx ./nginx
   - docker build -t sany/multi-server ./server
   - docker build -t sany/multi-worker ./worker
-
