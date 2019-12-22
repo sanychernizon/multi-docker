@@ -1,16 +1,16 @@
-sudo: required
-services:
-  - docker
+# sudo: required
+# services:
+#   - docker
 
-before_install:
-  - docker build -t sany/react-test -f ./client/Dockerfile.dev ./client
+# before_install:
+#   - docker build -t sany/react-test -f ./client/Dockerfile.dev ./client
 
-script:
-  - docker run sany/react-test yarn test -- --coverage
+# script:
+#   - docker run sany/react-test yarn test -- --coverage
 
-after_success:
-  - docker build -t sany/multi-client ./client
-  - docker build -t sany/multi-nginx ./nginx
-  - docker build -t sany/multi-server ./server
-  - docker build -t sany/multi-worker ./worker
+# after_success:
+#   - docker build -t sany/multi-client ./client
+#   - docker build -t sany/multi-nginx ./nginx
+#   - docker build -t sany/multi-server ./server
+#   - docker build -t sany/multi-worker ./worker
 
