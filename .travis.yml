@@ -10,12 +10,12 @@ script:
   - docker run -e CI=true sany/react-test npm test
 
 after_success:
-  - docker build -t sany/multi-client ./client
-  - docker build -t sany/multi-nginx ./nginx
-  - docker build -t sany/multi-server ./server
-  - docker build -t sany/multi-worker ./worker
+  - docker build -t sanychernizon/multi-client ./client
+  - docker build -t sanychernizon/multi-nginx ./nginx
+  - docker build -t sanychernizon/multi-server ./server
+  - docker build -t sanychernizon/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push sany/multi-client
-  - docker push sany/multi-nginx
-  - docker push sany/multi-server
-  - docker push sany/multi-worker
+  - docker push sanychernizon/multi-client
+  - docker push sanychernizon/multi-nginx
+  - docker push sanychernizon/multi-server
+  - docker push sanychernizon/multi-worker
