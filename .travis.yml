@@ -14,3 +14,8 @@ after_success:
   - docker build -t sany/multi-nginx ./nginx
   - docker build -t sany/multi-server ./server
   - docker build -t sany/multi-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push sany/multi-client
+  - docker push sany/multi-nginx
+  - docker push sany/multi-server
+  - docker push sany/multi-worker
